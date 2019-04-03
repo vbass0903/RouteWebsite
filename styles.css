@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Blonde'; /*a name to be used later*/
+    src: url('fonts/Blonde.otf'); /*URL to font*/
+}
+
+body {
+	background-color: black;
+}
+h1 {
+	color: white;
+	font-family: 'Blonde';
+}
