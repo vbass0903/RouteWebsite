@@ -7,11 +7,32 @@ body {
 	font-family: 'Blonde';
 	color: white;
 }
+ul {
+	position: sticky;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li {
+  float: right;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: #8c8a82;
+}
+
 #mainInfo{
 	position: absolute;
 	font-size: 10px;
 	z-index: 1;
-	top: 64%;
+	top: 63%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
@@ -19,7 +40,7 @@ body {
 	position: absolute;
 	font-size: 9px;
 	z-index: 1;
-	top: 68%;
+	top: 67%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
@@ -27,7 +48,7 @@ body {
 	position: absolute;
 	font-size: 9px;
 	z-index: 1;
-	top: 70%;
+	top: 69%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
@@ -39,15 +60,16 @@ body {
   text-decoration-color: white;
   text-decoration-style: solid;
   /*Center Header*/
-  top: 50%;
+  top: 49%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
 #scrollBtn {
+	cursor: pointer;
 	position: absolute;
 	font-size: 10px;
 	z-index: 1;
-	top: 90%;
+	top: 89%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
