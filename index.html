@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles.css">
+	<!--<script type="text/javascript" src="routeJS.js"></script>-->
+	<script type="text/javascript">
+		window.smoothScroll = function(target) {
+		    var scrollContainer = target;
+		    do { //find scroll container
+		        scrollContainer = scrollContainer.parentNode;
+		        if (!scrollContainer) return;
+		        scrollContainer.scrollTop += 1;
+		    } while (scrollContainer.scrollTop == 0);
+
+		    var targetY = 0;
+		    do { //find the top of target relatively to the container
+		        if (target == scrollContainer) break;
+		        targetY += target.offsetTop;
+		    } while (target = target.offsetParent);
+
+		    scroll = function(c, a, b, i) {
+		        i++; if (i > 30) return;
+		        c.scrollTop = a + (b - a) / 30 * i;
+		        setTimeout(function(){ scroll(c, a, b, i); }, 15);
+		    }
+		    // start scrolling
+		    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+		}
+	</script>
+	<title>Routes</title>
+</head>
+<body>
+	<nav>
+		<ul>
+	  	<li><a href="#music">Music</a></li>
+	  	<li><a href="#drive">Drive</a></li>
+	  	<li><a href="#home">Home</a></li>
+		</ul>
+	</nav>
+	<div class="wrapper">
+		<h1 id="mainHeader">drive</h1>
+		<h6 id="mainInfo">Filmed by Andrew Dau</h6>
+		<h6 id="mainInfo2">Featuring</h6>
+		<h6 id="mainInfo3">The Bois</h6>
+		<button class="scroll-down" type="button" id="scrollBtn" onclick="smoothScroll(document.getElementById('bottomDiv'))"></button>
+		<video class="videoInsert" autoplay muted loop id="driveVid">
+			<source src="drive.mp4" type="video/mp4">
+		</video>
+	</div>
+	<div id="bottomDiv">
+		<h1 style="font-size: 50px; border: 5px; border-color: white; border-style: solid;">Videos</h1>
+		<video class=vidlist poster="vid1.png" controls>
+  		<source src="drive.mp4" type="video/mp4">
+	</div>
+</body>
+</html>
+
